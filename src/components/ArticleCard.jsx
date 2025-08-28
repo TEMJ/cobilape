@@ -4,7 +4,7 @@ const ArticleCard = ({ title, date, excerpt, imageUrl }) => {
       {imageUrl && (
         <div className="h-48 bg-gray-200">
           <img 
-            src={imageUrl} 
+            src={imageUrl}
             alt={title}
             className="w-full h-full object-cover"
           />

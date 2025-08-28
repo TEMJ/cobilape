@@ -20,7 +20,7 @@ const SimplePage = ({
         heightClass="h-[60vh] md:h-[60vh]"
       />
 
-      <section className="py-16">
+      <section className="py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-3">
             <Reveal className="lg:col-span-2">
@@ -34,7 +34,7 @@ const SimplePage = ({
                 <ul className="mt-4 space-y-2 text-sm text-gray-600">
                   <li><a href="#" className="hover:text-primary-600">Admissions</a></li>
                   <li><a href="#" className="hover:text-primary-600">Calendrier</a></li>
-                  <li><a href="#" className="hover:text-primary-600">Publications</a></li>
+                  <li><a href="/news" className="hover:text-primary-600">Publications</a></li>
                 </ul>
               </aside>
             </Reveal>

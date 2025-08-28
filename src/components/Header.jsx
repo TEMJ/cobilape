@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
-import logo from '../assets/logo 1.png';
+import logo from '../assets/logo1.png';
 
 const Header = () => {
   const location = useLocation();
@@ -90,7 +90,7 @@ const Header = () => {
         {
           title: "L'établissement",
           links: [
-            { label: "Mot d'accueil", to: '/decouvrir/mot-accueil' },
+            { label: "Mot du Principal", to: '/decouvrir/mot-accueil' },
             { label: 'Notre histoire', to: '/decouvrir/histoire' },
             { label: 'Nos lieux de vie', to: '/decouvrir/lieux-de-vie' },
           ],
@@ -100,7 +100,6 @@ const Header = () => {
           links: [
             { label: 'Notre pédagogie', to: '/pedagogie/notre-pedagogie' },
             { label: 'Esprit de la Perle', to: '/pedagogie/esprit-perle' },
-            { label: 'Vie spirituelle', to: '/pedagogie/vie-spirituelle' },
           ],
         },
         {
@@ -145,7 +144,6 @@ const Header = () => {
         {
           title: 'Vie scolaire',
           links: [
-            { label: "L’aumônerie", to: '/vie-scolaire/aumonerie' },
             { label: 'Bibliothèque & multimédia', to: '/vie-scolaire/bibliotheque' },
             { label: 'Orientation', to: '/vie-scolaire/orientation' },
           ],
@@ -180,8 +178,7 @@ const Header = () => {
               <a href="https://wa.link/zgq7x2">+237 6 74 67 32 92</a>
             </span>
             <span className="inline-flex items-center gap-2">
-              <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18a2 2 0 002-2V8a2 2 0 00-2-2H3a2 2 0 00-2 2v6a2 2 0 002 2z" /></svg>
-              contact@cblaperle.org
+              contact@laperlecollege.com
             </span>
           </div>
           <div className="flex items-center gap-3">

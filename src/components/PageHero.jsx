@@ -2,8 +2,8 @@ const PageHero = ({
   title = '',
   subtitle = '',
   heroImage = '',
-  primaryCta = { label: "Découvrir l'établissement", href: '#' },
-  secondaryCta = { label: "Contacter l'administration", href: '#' },
+  // primaryCta = { label: "Découvrir l'établissement", href: '/' },
+  // secondaryCta = { label: "Contacter l'administration", href: '#' },
   heightClass = 'h-[60vh] md:h-[60vh]'
 }) => {
   return (
@@ -20,12 +20,12 @@ const PageHero = ({
       <div className="mx-auto flex h-full max-w-7xl items-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           {title && (
-            <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl">{title}</h1>
+            <h1 className="text-4xl font-extrabold tracking-tight md:text-3xl">{title}</h1>
           )}
           {subtitle && (
-            <p className="mt-4 text-lg text-white/90 md:text-xl">{subtitle}</p>
+            <p className="mt-4 text-lg text-white/90 md:text-m">{subtitle}</p>
           )}
-          {(primaryCta?.label || secondaryCta?.label) && (
+          {/* {(primaryCta?.label || secondaryCta?.label) && (
             <div className="mt-8 flex items-center gap-4">
               {primaryCta?.label && (
                 <a href={primaryCta.href} className="rounded-full bg-white/90 px-6 py-3 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-black/5 backdrop-blur transition hover:bg-white">
@@ -38,7 +38,7 @@ const PageHero = ({
                 </a>
               )}
             </div>
-          )}
+          )} */}
         </div>
       </div>
     </section>

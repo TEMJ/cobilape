@@ -9,7 +9,7 @@ const variants = {
 };
 
 const Reveal = ({
-  as: Tag = 'div',
+  as = 'div',
   children,
   className = '',
   variant = 'fadeUp',
@@ -48,15 +48,16 @@ const Reveal = ({
 
   const hidden = variants[variant] || variants.fadeUp;
 
+  const Component = as;
   return (
-    <Tag
+    <Component
       ref={ref}
       className={`${className} transform transition duration-700 ease-out will-change-[transform,opacity] ${
         show ? 'translate-y-0 translate-x-0 opacity-100' : hidden
       }`}
     >
       {children}
-    </Tag>
+    </Component>
   );
 };
 

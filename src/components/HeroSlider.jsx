@@ -29,8 +29,7 @@ const HeroSlider = ({ slides = [], autoPlayMs = DEFAULT_INTERVAL_MS }) => {
     if (!Array.isArray(slides) || slides.length === 0) {
       return [
         {
-          imageUrl:
-            'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1600&auto=format&fit=crop',
+          image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1600&auto=format&fit=crop',
           title: "Collège Bilingue La Perle",
           subtitle: "Former les leaders de demain avec excellence et innovation",
         },
@@ -79,7 +78,7 @@ const HeroSlider = ({ slides = [], autoPlayMs = DEFAULT_INTERVAL_MS }) => {
             }
             aria-hidden={idx !== activeIndex}
             style={{
-              backgroundImage: `url(${slide.imageUrl})`,
+              backgroundImage: `url(${slide.image || slide.imageUrl})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }}

@@ -58,7 +58,7 @@ const Contact = () => {
             <div className="space-y-4 text-gray-700">
               <div>
                 <h3 className="text-sm font-semibold uppercase tracking-wide text-gray-600">Adresse</h3>
-                <p>BP : 765, Mvolyé, Yaoundé - Cameroun</p>
+                <p>BP : 760, Douala, Ari Ngodi Bakoko derrière Nepturne Oil</p>
               </div>
               <div>
                 <h3 className="text-sm font-semibold uppercase tracking-wide text-gray-600">Téléphone</h3>
@@ -66,7 +66,7 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="text-sm font-semibold uppercase tracking-wide text-gray-600">Email</h3>
-                <p>contact@cblaperle.org</p>
+                <p>contact@laperlecollege.com</p>
               </div>
             </div>
           </aside>

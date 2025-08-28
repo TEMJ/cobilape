@@ -19,7 +19,7 @@ const Footer = () => {
             <ul className="mt-4 space-y-2 text-sm text-white/70">
               <li>BP : 760 Douala, Ari Ngodi Bakoko derrière Nepturne Oil</li>
               <li>(+237) 6 74 67 32 92</li>
-              <li>contact@cblaperle.org</li>
+              <li>contact@laperlecollege.com</li>
             </ul>
           </div>
 

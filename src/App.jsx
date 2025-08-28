@@ -1,41 +1,71 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Suspense, lazy } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-import About from './pages/About';
-import News from './pages/News';
-import Contact from './pages/Contact';
-import Admissions from './pages/Admissions';
-import DecouvrirMotAccueil from './pages/DecouvrirMotAccueil';
-import DecouvrirHistoire from './pages/DecouvrirHistoire';
-import DecouvrirLieux from './pages/DecouvrirLieux';
-import PedagogieNotre from './pages/PedagogieNotre';
-import PedagogieEsprit from './pages/PedagogieEsprit';
-import PedagogieSpirituelle from './pages/PedagogieSpirituelle';
-import RessourcesChiffres from './pages/RessourcesChiffres';
-import RessourcesGalerie from './pages/RessourcesGalerie';
-import RessourcesSalleFetes from './pages/RessourcesSalleFetes';
-import EtudierObservationPresentation from './pages/EtudierObservationPresentation';
-import EtudierObservationModalites from './pages/EtudierObservationModalites';
-import EtudierOrientationPresentation from './pages/EtudierOrientationPresentation';
-import EtudierOrientationResultats from './pages/EtudierOrientationResultats';
-import EtudierOrientationModalites from './pages/EtudierOrientationModalites';
-import EtudierSecondPresentation from './pages/EtudierSecondPresentation';
-import EtudierSecondResultats from './pages/EtudierSecondResultats';
-import EtudierSecondModalites from './pages/EtudierSecondModalites';
 import SimplePage from './components/SimplePage';
+import Loader from './components/Loader';
+import SEO from './components/SEO';
+import { getSeoConfig } from './utils/seoConfig';
+
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+const News = lazy(() => import('./pages/News'));
+const Contact = lazy(() => import('./pages/Contact'));
+const Admissions = lazy(() => import('./pages/Admissions'));
+const DecouvrirMotAccueil = lazy(() => import('./pages/DecouvrirMotAccueil'));
+const DecouvrirHistoire = lazy(() => import('./pages/DecouvrirHistoire'));
+const DecouvrirLieux = lazy(() => import('./pages/DecouvrirLieux'));
+const PedagogieNotre = lazy(() => import('./pages/PedagogieNotre'));
+const PedagogieEsprit = lazy(() => import('./pages/PedagogieEsprit'));
+const PedagogieSpirituelle = lazy(() => import('./pages/PedagogieSpirituelle'));
+const RessourcesChiffres = lazy(() => import('./pages/RessourcesChiffres'));
+const RessourcesGalerie = lazy(() => import('./pages/RessourcesGalerie'));
+const RessourcesSalleFetes = lazy(() => import('./pages/RessourcesSalleFetes'));
+const ArticleDetail = lazy(() => import('./pages/ArticleDetail'));
+const EtudierObservationPresentation = lazy(() => import('./pages/EtudierObservationPresentation'));
+const EtudierObservationModalites = lazy(() => import('./pages/EtudierObservationModalites'));
+const EtudierOrientationPresentation = lazy(() => import('./pages/EtudierOrientationPresentation'));
+const EtudierOrientationResultats = lazy(() => import('./pages/EtudierOrientationResultats'));
+const EtudierOrientationModalites = lazy(() => import('./pages/EtudierOrientationModalites'));
+const EtudierSecondPresentation = lazy(() => import('./pages/EtudierSecondPresentation'));
+const EtudierSecondResultats = lazy(() => import('./pages/EtudierSecondResultats'));
+const EtudierSecondModalites = lazy(() => import('./pages/EtudierSecondModalites'));
 
 function App() {
   return (
-    <Router>
-      <div className="min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/news" element={<News />} />
-            <Route path="/contact" element={<Contact />} />
+    <HelmetProvider>
+      <Router>
+        <div className="min-h-screen flex flex-col">
+          <Header />
+          <main className="flex-grow">
+            <Suspense fallback={<Loader />}> 
+            <Routes>
+              <Route path="/" element={
+                <>
+                  <SEO {...getSeoConfig('home')} />
+                  <Home />
+                </>
+              } />
+              <Route path="/about" element={
+                <>
+                  <SEO {...getSeoConfig('about')} />
+                  <About />
+                </>
+              } />
+              <Route path="/news" element={
+                <>
+                  <SEO {...getSeoConfig('news')} />
+                  <News />
+                </>
+              } />
+              <Route path="/contact" element={
+                <>
+                  <SEO {...getSeoConfig('contact')} />
+                  <Contact />
+                </>
+              } />
+              <Route path="/news/:id" element={<ArticleDetail />} />
 
             {/* Admissions */}
             <Route path="/admissions" element={<Admissions />} />
@@ -79,10 +109,12 @@ function App() {
             <Route path="/vie-scolaire/internat/infos" element={<SimplePage title="Internat - Infos pratiques" subtitle="Vivre au collège en toute sérénité" />} />
             <Route path="/vie-scolaire/internat/reglement" element={<SimplePage title="Internat - Règlement" subtitle="Un cadre de vie respectueux" />} />
           </Routes>
+          </Suspense>
         </main>
         <Footer />
       </div>
-    </Router>
+      </Router>
+    </HelmetProvider>
   );
 }
 
